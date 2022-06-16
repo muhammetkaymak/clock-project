@@ -1,0 +1,99 @@
+* {
+  user-select: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+  background-color: #525252;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  background-color: #525252;
+  width: 600px;
+  height: 800px;
+  margin-top: 50px;
+  box-shadow: 7px 7px 9px rgba(0, 0, 0, 0.2), inset 7px 7px 9px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+}
+.Container-analog {
+  position: relative;
+  height: 600px;
+  border-radius: 50%;
+  background-color: #525252;
+  box-shadow: 7px 7px 9px rgba(0, 0, 0, 0.2), inset 7px 7px 9px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Container-analog span {
+  position: absolute;
+  inset: 15px;
+  text-align: center;
+  transform: rotate(calc(90deg*var(--i)));
+}
+.Container-analog span b {
+  color: #CA3E47;
+  box-shadow: 3px 3px 5px, inset 1px 1px 5px;
+  width: 60px;
+  font-size: 3em;
+  opacity: 70%;
+  display: inline-block;
+  transform: rotate(calc(-90deg*var(--i)));
+}
+.Container-analog .circle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+}
+.Container-analog-hours i {
+  position: absolute;
+  background-color: #313131;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+  width: 7px;
+  height: 130px;
+  border-radius: 10px;
+  z-index: 3;
+}
+.Container-analog-minute i {
+  position: absolute;
+  background-color: #414141;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+  width: 7px;
+  height: 210px;
+  border-radius: 10px;
+  z-index: 1;
+}
+.Container-analog-second i {
+  position: absolute;
+  background-color: #CA3E47;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+  width: 7px;
+  height: 170px;
+  border-radius: 10px;
+  z-index: 2;
+}
+.Container-digital {
+  background-color: #525252;
+  box-shadow: 7px 7px 9px rgba(0, 0, 0, 0.2), inset 7px 7px 9px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  width: 230px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 3em;
+  color: #CA3E47;
+}
+.Container-digital-minute::before, .Container-digital-minute::after {
+  content: ":";
+}

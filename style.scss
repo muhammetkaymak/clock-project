@@ -1,0 +1,124 @@
+// Color Palet : https://colorhunt.co/palette/525252414141313131ca3e47
+
+$font-family: 'Poppins', sans-serif;
+
+$bg-color: #525252;
+$color-dark-gray: #313131;
+$color-light-gray: #414141;
+$color-text: #CA3E47;
+
+$box-shadow: 7px 7px 9px rgba(0, 0, 0, .20), inset 7px 7px 9px rgba(0, 0, 0, .20);
+
+* {
+    user-select: none;
+    font-family: $font-family;  
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+    background-color: $bg-color;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    background-color: $bg-color;
+    width: 600px;
+    height: 800px;
+    margin-top: 50px;
+    box-shadow: $box-shadow;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+
+    &-analog {
+        position: relative;
+        height: 600px;
+        border-radius: 50%;
+        background-color: $bg-color;
+        box-shadow: $box-shadow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            position: absolute;
+            inset: 15px;
+            text-align: center;
+            transform: rotate(calc(90deg*var(--i)));
+
+            b {
+                color: $color-text;
+                box-shadow: 3px 3px 5px, inset 1px 1px 5px;
+                width: 60px;
+                font-size: 3em;
+                opacity: 70%;
+                display: inline-block;
+                transform: rotate(calc(-90deg*var(--i)));
+            }
+        }
+
+        .circle {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: absolute;
+        }
+
+        &-hours i {
+            position: absolute;
+            background-color: $color-dark-gray;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, .50);
+            width: 7px;
+            height: 130px;
+            border-radius: 10px;
+            z-index: 3;
+        }
+
+        &-minute i {
+            position: absolute;
+            background-color: $color-light-gray;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, .50);
+            width: 7px;
+            height: 210px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        &-second i {
+            position: absolute;
+            background-color: $color-text;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, .50);
+            width: 7px;
+            height: 170px;
+            border-radius: 10px;
+            z-index: 2;
+        }
+    }//-analog
+
+    &-digital {
+        background-color: $bg-color;
+        box-shadow: $box-shadow;
+        border-radius: 20px;
+        width: 230px;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 3em;
+        color: $color-text;
+
+        &-minute {
+
+            &::before, &::after {
+                content: ':';
+            }
+        }
+
+    }//-digital
+
+}//.Container
